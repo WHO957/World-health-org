@@ -1,33 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WHO Yemen Management Portal</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    body { font-family: 'Open Sans', sans-serif; margin: 0; background: #f4f6f8; color: #333; }
-    header { background: url('https://example.com/yemen-map-banner.jpg') no-repeat center center/cover; padding: 4rem 2rem; color: white; text-align: center; }
-    header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-    header p { font-size: 1.2rem; max-width: 700px; margin: 0 auto; }
-    section { padding: 2rem; max-width: 1200px; margin: auto; }
-    .stats { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: space-around; text-align: center; }
-    .card { background: white; padding: 1.5rem; border-radius: 10px; flex: 1; min-width: 200px; box-shadow: 0 0 10px rgba(0,0,0,0.05); }
-    .card i { font-size: 2rem; color: #0077b6; margin-bottom: 0.5rem; }
-    .updates, .programs, .message-form, .reports, .emergency-report { background: white; border-radius: 10px; padding: 2rem; margin-top: 2rem; box-shadow: 0 0 10px rgba(0,0,0,0.05); }
-    .update-item { border-bottom: 1px solid #eee; padding: 0.5rem 0; }
-    .programs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
-    .program-card { background: #f9fafb; border-left: 5px solid #0077b6; padding: 1rem; border-radius: 8px; }
-    .program-card h4 { margin: 0.5rem 0; }
-    .form-group { margin-bottom: 1rem; }
-    .form-group label { display: block; margin-bottom: 0.5rem; }
-    input, textarea, select { width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 5px; }
-    button { background: #0077b6; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 5px; cursor: pointer; }
-    footer { background: #1e2a38; color: white; padding: 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; }
-    footer div { margin-bottom: 1rem; }
-    .language-switch { margin-top: 0.5rem; }
-    .download-buttons a { margin-right: 1rem; color: white; text-decoration: underline; }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      background: #f4f6f8;
+      color: #333;
+    }
+
+    header {
+      background: url('https://upload.wikimedia.org/wikipedia/commons/0/0f/Yemen_location_map.svg') no-repeat center center/cover;
+      padding: 4rem 2rem;
+      color: white;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .stats {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      text-align: center;
+    }
+
+    .card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      flex: 1;
+      min-width: 200px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .card i {
+      font-size: 2rem;
+      color: #0077b6;
+      margin-bottom: 0.5rem;
+    }
+
+    .updates, .programs, .message-form, .reports, .emergency-report {
+      background: white;
+      border-radius: 10px;
+      padding: 2rem;
+      margin-top: 2rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .update-item {
+      border-bottom: 1px solid #eee;
+      padding: 0.5rem 0;
+    }
+
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .program-card {
+      background: #f9fafb;
+      border-left: 5px solid #0077b6;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background: #0077b6;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #1e2a38;
+      color: white;
+      padding: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    footer div {
+      margin-bottom: 1rem;
+    }
+
+    .language-switch {
+      margin-top: 0.5rem;
+    }
+
+    .download-buttons a {
+      margin-right: 1rem;
+      color: white;
+      text-decoration: underline;
+    }
   </style>
 
   <!--Start of Tawk.to Script-->
@@ -43,7 +149,116 @@
   })();
   </script>
   <!--End of Tawk.to Script-->
-
 </head>
+
 <body>
-<!-- The rest of your body content goes here -->
+  <header>
+    <h1>🌍 WHO YEMEN MANAGEMENT PORTAL</h1>
+    <p>"Delivering Health Relief with Urgency, Transparency, and Hope."</p>
+  </header>
+
+  <section>
+    <h2>🔹 HOMEPAGE — Dashboard Overview</h2>
+    <div class="stats">
+      <div class="card"><i class="fas fa-syringe"></i><h3>2,500,000+</h3><p>Vaccinations Delivered</p></div>
+      <div class="card"><i class="fas fa-ambulance"></i><h3>7,840</h3><p>Emergency Responses</p></div>
+      <div class="card"><i class="fas fa-hospital"></i><h3>93</h3><p>Operational Health Units</p></div>
+      <div class="card"><i class="fas fa-user-md"></i><h3>12,000+</h3><p>Medical Staff & Volunteers</p></div>
+    </div>
+
+    <div class="updates">
+      <h3>🟢 Latest Field Updates</h3>
+      <div class="update-item">✔️ Cholera response active in Al Hudaydah – July 10, 2025</div>
+      <div class="update-item">✔️ Mobile clinic deployment to Ma’rib camps – July 9, 2025</div>
+      <div class="update-item">✔️ Cold chain supplies delivered – Sana’a</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>🔹 ABOUT WHO YEMEN</h2>
+    <p>The World Health Organization in Yemen coordinates health responses for millions in conflict-affected regions. We are committed to saving lives, preventing disease outbreaks, and strengthening the health system even in the most challenging situations.</p>
+    <p><strong>Mission:</strong> To deliver lifesaving healthcare services to all vulnerable populations in Yemen through coordination, accountability, and rapid response.</p>
+    <ul>
+      <li>Epidemic surveillance</li>
+      <li>Nutrition and maternal-child health</li>
+      <li>Emergency preparedness</li>
+      <li>Mental health and trauma recovery</li>
+    </ul>
+  </section>
+
+  <section class="programs">
+    <h2>🔹 HEALTH PROGRAMS & OPERATIONS</h2>
+    <div class="programs-grid">
+      <div class="program-card"><h4>📌 Emergency Medical Services</h4><p>Deploying mobile clinics and field teams to underserved regions.</p></div>
+      <div class="program-card"><h4>📌 Vaccination Campaigns</h4><p>Nationwide polio and measles immunizations reaching children under 5.</p></div>
+      <div class="program-card"><h4>📌 Nutrition & Child Health</h4><p>Screening malnourished children, delivering therapeutic feeding support.</p></div>
+      <div class="program-card"><h4>📌 Disease Outbreak Response</h4><p>Rapid-response teams containing cholera, dengue, and malaria outbreaks.</p></div>
+    </div>
+  </section>
+
+  <section class="message-form">
+    <h2>🔹 MESSAGE THE MANAGER</h2>
+    <form>
+      <div class="form-group"><label>Full Name</label><input type="text"></div>
+      <div class="form-group"><label>Email Address</label><input type="email"></div>
+      <div class="form-group"><label>Phone Number (optional)</label><input type="text"></div>
+      <div class="form-group"><label>Subject</label><input type="text"></div>
+      <div class="form-group"><label>Your Message</label><textarea rows="4"></textarea></div>
+      <div class="form-group"><label>Upload Documents (optional)</label><input type="file"></div>
+      <div class="form-group"><label><input type="checkbox"> I'm not a robot</label></div>
+      <button type="submit">📨 SEND MESSAGE</button>
+    </form>
+  </section>
+
+  <section class="reports">
+    <h2>🔹 REPORTS & DOCUMENTS</h2>
+    <ul>
+      <li><a href="#">[Download] Yemen Health Activity Report – Q2 2025 (PDF)</a></li>
+      <li><a href="#">[Download] Emergency Response Brief – June 2025</a></li>
+      <li><a href="#">[Download] Vaccination Dashboard Overview – 2025</a></li>
+    </ul>
+    <input type="text" placeholder="Search by year/type...">
+  </section>
+
+  <section class="emergency-report">
+    <h2>🔹 EMERGENCY REPORTING TOOL</h2>
+    <form>
+      <div class="form-group"><label>Region / Governorate</label><input type="text"></div>
+      <div class="form-group"><label>Type of Incident</label>
+        <select>
+          <option>Outbreak</option>
+          <option>Injury Surge</option>
+          <option>Medical Supply Shortage</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Urgency Level</label>
+        <select>
+          <option>High</option>
+          <option>Medium</option>
+          <option>Low</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Description</label><textarea rows="3"></textarea></div>
+      <div class="form-group"><label>Upload Evidence (optional)</label><input type="file"></div>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <footer>
+    <div>
+      <strong>WHO Yemen</strong><br>
+      “In service to the people of Yemen, with global support and accountability.”
+    </div>
+    <div>
+      📍 WHO Yemen Office, Sana’a<br>
+      📧 yem.admin@who.int<br>
+      ☎️ +967 XXX XXX XXX
+      <div class="language-switch">🌐 English | العربية</div>
+      <div class="download-buttons">
+        📱 <a href="#">Android App</a>
+        <a href="#">iOS App</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
